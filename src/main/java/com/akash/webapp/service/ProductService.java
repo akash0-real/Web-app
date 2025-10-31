@@ -11,6 +11,6 @@ public class ProductService {
 
     List<Product> product = Arrays.asList(new Product(101,"apple",50000), new Product(102,"mingos",40000));
     public List<Product> getProducts(){
-        return null;
+        return product;
     }
 }
