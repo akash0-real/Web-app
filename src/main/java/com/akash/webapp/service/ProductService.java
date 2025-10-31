@@ -15,6 +15,6 @@ public class ProductService {
     }
     public Product getProductId(int prodId){
         return  product.stream().filter(n -> n.getProdId() == prodId)
-                .findFirst().get();
+                .findFirst().orElse(new Product(1,"No Item",0));
     }
 }
