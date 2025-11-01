@@ -33,4 +33,15 @@ public class ProductService {
         }
         product.set(index,prod);
     }
+
+    public void deleteProd(int prodId){
+        int index = 0;
+        for(int i=0;i<product.size();i++){
+            if(product.get(i).getProdId() == prodId){
+                index = i;
+            }
+        }
+        product.remove(index);
+
+    }
 }
