@@ -2,8 +2,6 @@ package com.akash.webapp.service;
 
 import com.akash.webapp.Model.Product;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,5 +22,15 @@ public class ProductService {
 
     public void addProd(Product prod){
         product.add(prod);
+    }
+
+    public void updateProd(Product prod){
+        int index = 0;
+        for(int i=0;i<product.size();i++){
+            if(product.get(i).getProdId() == prod.getProdId()){
+                index = i;
+            }
+        }
+        product.set(index,prod);
     }
 }
