@@ -10,9 +10,12 @@ import java.util.List;
 @RestController
 public class ProductController {
     private final ProductService service;
+    private final Product product;
+
     @Autowired
-    public ProductController(ProductService service){
+    public ProductController(ProductService service, Product product){
         this.service = service;
+        this.product = product;
     }
     @GetMapping("/products")
    public List<Product> getProducts(){
@@ -31,5 +34,10 @@ public class ProductController {
     @PutMapping("/products")
     public void updateProd(@RequestBody Product prod){
         service.updateProd(prod);
+    }
+
+    @DeleteMapping("/products/{prodId}")
+    public void deleteProd(@PathVariable int prodId){
+        service.deleteProd(prodId);
     }
 }
